@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:invertory/Feature/Screen/Home/Home.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -53,19 +55,25 @@ class SignIn extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical:30.0),
+              padding: const EdgeInsets.symmetric(vertical: 30.0),
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)
-                    ),
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
                       fixedSize: Size(MediaQuery.of(context).size.width * 1,
                           MediaQuery.of(context).size.height * 0.06)),
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (context) => HomeScreen(),
+                    //     ));
+                    Get.off(()=>HomeScreen(),transition: Transition.fade);
+                  },
                   child: Text("Sign Up")),
-            )
+            ),
           ],
         ),
       ),
